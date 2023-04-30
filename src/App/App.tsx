@@ -15,6 +15,7 @@ import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
 import { InjectedConnector } from "wagmi/connectors/injected";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
+import Header from "../components/Header.tsx/Header";
 const { chains, provider, webSocketProvider } = configureChains(
   [polygonMumbai],
   [
@@ -69,6 +70,7 @@ const App = () => {
           theme="colored"
         />
         <Router>
+          <Header />
           <Routes />
         </Router>
       </Providers>
