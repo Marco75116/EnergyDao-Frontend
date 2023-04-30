@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { WalletContext } from "../../context/Wallet.context";
 import { FC, Fragment, useContext, useEffect, useState } from "react";
-import { ReactComponent as Cross } from "../../asset/icons/Cross.svg";
+import { ReactComponent as Cross } from "../../assets/icons/Cross.svg";
 import { m } from "../../plugins/magic";
 import { ethers } from "ethers";
 import { MagicSDKExtensionsOption } from "magic-sdk";

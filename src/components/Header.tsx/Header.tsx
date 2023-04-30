@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { ReactComponent as Logo } from "../../asset/logos/EnergyLogo.svg";
+import { ReactComponent as Logo } from "../../assets/logos/EnergyLogo.svg";
 import { useNavigate } from "react-router-dom";
 import ModalMagicConnexion from "../ModalMagicConnexion/ModalMagicConnexion";
 import { WalletContext } from "../../context/Wallet.context";
