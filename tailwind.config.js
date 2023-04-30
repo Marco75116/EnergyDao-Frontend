@@ -6,6 +6,7 @@ module.exports = {
       ...colors,
       magicWallet: "#6851FF",
       borderCardNavbar: "#00000014",
+      bgCardNavbar: "#FAFAFA",
     },
     extend: {},
   },
