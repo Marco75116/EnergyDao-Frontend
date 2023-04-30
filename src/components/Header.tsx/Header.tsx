@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ReactComponent as Logo } from "../../assets/logos/EnergyLogo.svg";
 import { useNavigate } from "react-router-dom";
 import ModalMagicConnexion from "../ModalMagicConnexion/ModalMagicConnexion";
@@ -11,6 +11,10 @@ const Header = () => {
 
   const { email, isWalletConnected, disconnectMagic } =
     useContext(WalletContext);
+
+  useEffect(() => {
+    navigate("/proposals");
+  }, []);
 
   return (
     <div className="border-b-borderBottomConnectedCard grid h-16 grid-cols-3 border-b-[0.5px] px-6">
