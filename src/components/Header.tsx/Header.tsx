@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { ReactComponent as Logo } from "../../asset/logos/EnergyLogo.svg";
 import { useNavigate } from "react-router-dom";
+import ModalMagicConnexion from "../ModalMagicConnexion/ModalMagicConnexion";
+import { WalletContext } from "../../context/Wallet.context";
 
 const Header = () => {
   const navigate = useNavigate();
   const [selectedPart, setSelectedPart] = useState<0 | 1 | 2 | 3>(0);
+  const [openMagic, setOpenMagic] = useState<boolean>(false);
+
+  const { email, isWalletConnected, disconnectMagic } =
+    useContext(WalletContext);
+
   return (
     <div className="border-b-borderBottomConnectedCard grid h-16 grid-cols-3 border-b-[0.5px] px-6">
       <div
@@ -14,7 +21,9 @@ const Header = () => {
         }}
       >
         <Logo className=" h-10  w-10" />
-        <div className=" text-lg  font-bold ">EnergyDao</div>
+        <div className=" text-lg  font-bold hover:text-green-400 ">
+          EnergyDao
+        </div>
       </div>
 
       <div className="flex items-center justify-center gap-[12px] space-x-2">
@@ -54,11 +63,20 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="col-span-1 flex items-center justify-end gap-[8px] font-semibold  ">
-        <button className="rounded-2xl bg-green-400 py-3 px-5 font-semibold text-white hover:bg-green-700">
-          Login
+      <div className="col-span-1 flex items-center justify-end gap-[8px] font-semibold text-green-400  ">
+        {isWalletConnected && email}
+        <button
+          className="rounded-2xl bg-green-400 py-3 px-5 font-semibold text-white hover:bg-green-700"
+          onClick={() => {
+            {
+              !isWalletConnected ? setOpenMagic(true) : disconnectMagic();
+            }
+          }}
+        >
+          {!isWalletConnected ? "Login" : "Disconnect"}
         </button>
       </div>
+      <ModalMagicConnexion isOpen={openMagic} setIsOpen={setOpenMagic} />
     </div>
   );
 };
