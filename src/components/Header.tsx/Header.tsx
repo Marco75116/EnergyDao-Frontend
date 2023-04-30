@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "../../asset/logos/EnergyLogo.svg";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [selectedPart, setSelectedPart] = useState<0 | 1 | 2 | 3>(0);
   return (
     <div className="border-b-borderBottomConnectedCard grid h-16 grid-cols-3 border-b-[0.5px] px-6">
-      <div className="col-span-1 flex items-center gap-2 hover:cursor-pointer">
+      <div
+        className="col-span-1 flex items-center gap-2 hover:cursor-pointer"
+        onClick={() => {
+          navigate("/proposals");
+        }}
+      >
         <Logo className=" h-10  w-10" />
         <div className=" text-lg  font-bold ">EnergyDao</div>
       </div>
@@ -17,6 +24,7 @@ const Header = () => {
           } `}
           onClick={() => {
             setSelectedPart(0);
+            navigate("/proposals");
           }}
         >
           <div
@@ -34,6 +42,7 @@ const Header = () => {
           } `}
           onClick={() => {
             setSelectedPart(1);
+            navigate("/submitProposal");
           }}
         >
           <div
