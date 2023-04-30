@@ -40,7 +40,7 @@ const Proposals = () => {
   }, [filters]);
 
   return (
-    <div className=" bg-bgCardNavbar flex h-[calc(100%-64px)] flex-row justify-center gap-[16px] pt-10">
+    <div className=" flex h-[calc(100%-64px)] flex-row justify-center gap-[16px] bg-bgCardNavbar pt-10">
       {/* focus on this div for responsive time */}
       <div>
         <div className="card flex w-[280px] flex-col gap-[6px] p-3">

@@ -5,13 +5,14 @@ const SubmitProposal = () => {
     <div className="center  h-[calc(100%-64px)]  gap-[16px] bg-bgCardNavbar pt-10">
       <div className="card flex max-h-[536px] w-[60%] transform flex-row overflow-hidden border-[1px] border-green-400  text-left align-middle transition-all ">
         <div
-          className="w-7/12 p-6"
+          className="w-6/12 p-6"
           style={{
             backgroundImage:
               "url(https://assets.taraenergy.com/wp-content/uploads/2021/01/energy-conservation-definition-lightbulb-energy-image.jpg)",
+            backgroundRepeat: "no-repeat",
           }}
         ></div>
-        <div className=" w-5/12 border-l-[0.5px] border-l-green-400">
+        <div className=" w-6/12 border-l-[0.5px] border-l-green-400">
           <div className="border-borderCardAbout flex flex-row items-center justify-between border-b-[0.5px] border-solid p-6 text-lg font-medium leading-6 text-gray-900">
             <div>
               Submit a<span className="text-green-400"> Proposal</span> to the
